@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<title>Kolorowanie grafów</title>
+		<meta charset="utf-8"/>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		<nav>
+			<ul class="navigation">
+				<li><a href="">Teoria</a></li>
+				<li><a href="symulacja.html">Symulacja</a></li>
+				<li><a href="source.html">Źródła</a></li>
+			</ul>
+		</nav>
+		<script>
+			function short_form(){
+				alert(document.getElementById("first").innerHTML);
+				alert(document.getElementById("second").innerHTML);
+			}
+		</script>
+
+		<h1>KOLOROWANIE GRAFÓW </h1>
+
+		<div id="main">
+		<h3>Kolorowanie grafów w skrócie</h3>
+		<button class="info" onclick="short_form(); return true;"> Przeczytaj </button>
+
+		<h3>Ogólna definicja</h3>
+		Klasyczne kolorowanie grafu polega na przypisaniu określonym elementom składowym grafu (wierzchołkom, krawędziom lub ścianom) wybranych kolorów (etykiet) według ściśle określonych reguł. W praktyce zamiast kolorów stosuje się kolejne liczby całkowite, zaczynając od zera lub jedynki. <br>
+
+		Problemy kolorowania grafów należą do najtrudniejszych problemów kombinatorycznych w sensie złożoności obliczeniowej. Skonstruowanie algorytmu jest NP-trudne (czyli złożoność znaleznienia rozwiązania jest wykładnicza), chyba że P = NP. Dlatego kluczowe jest określenie granicy pomiędzy przypadkami obliczeniowo łatwymi, tj. wielomianowymi, które tworzą klasę P oraz trudnymi, czyli tzw. NP-zupełnymi (NPC). <br>
+
+		<h3>Wierzchołkowe kolorowanie grafów</h3>
+		<div id="first">Polega na przypisaniu wszystkim wierzchołkom w grafie kolorów tak, aby żadne dwa sąsiednie wierzchołki (czyli takie, które są połączone krawędzią) nie miały tego samego koloru – wtedy pokolorowanie nazywamy legalnym lub dozwolonym.</div>
+
+		Istotna w tym problemie jest optymalizacja kolorowania. Kolorwanie optymalne to takie legalne pokolorowanie, które zawiera najmniejszą możliwą liczbę kolorów (rys.1). Kolorowanie z rys. 2 jest legalne (prawidłowe), ale całkowicie nieoptymalne. <br>
+
+		<img class="sample" src="przyklad.png" alt="przykład" height="200" width="400"> <br>
+
+		<div id="second">Optymalne pokolorowanie danego grafu opisuje liczba chromatyczna grafu x(G). Określa ona minimalną ilość kolorów potrzebną do pokolorowania danego grafu.</div>
+
+		<h3>Przykładowe algorytmy kolorowania</h3> 
+
+		<h4>Algorytm zachłanny</h4>
+		Jednym z algorytmów kolorujących grafy jest prosty algorytm zachłanny, który działa w sposób następujący: <br>
+ 
+		Kolory są reprezentowane przez kolejne liczby 0,1,2,...
+		Wybieramy w grafie dowolny wierzchołek i kolorujemy go pierwszym kolorem nr 0.
+		Dla każdego z pozostałych wierzchołków grafu kolor ustalamy jako najniższy kolor, który nie jest użyty przez żadnego z jego sąsiadów.
+
+		<h4>Algorytm heurystyczny</h4>
+		Zmieniając odpowiednio kolejność przetwarzanych w algorytmie wierzchołków, da się uzyskać lepsze przybliżenie kolorowania dokładnego. Na tej zasadzie działają różne algorytmy heurystyczne. <br>
+
+		<h5> Algorytm LF (Largest First) </h5>
+		Jest jednym z najprostszych algorytmów heurystycznych. <br>
+		
+		Działanie:
+		1. Uporządkuj wierzchołki grafu malejąco według ich stopni (liczby krawędzi z nich wychodzących). <br>
+		2. Koloruj wierzchołki zachłannie, zgodnie z ustaloną wcześniej kolejnością (zaczynając od wierzchołka o największym stopniu). <br>
+		
+		Jest to algorytm statyczny - raz ustalona kolejność wierzchołków nie zmienia się w trakcie jego działania. <br>
+
+		<h3> Przykłady zastosowania kolorowania grafów </h3>
+		<h4> Rozkład godzin wykładowców</h4>
+
+		Chcemy, aby w jak najkrótszym czasie odbyło się jak najwięcej wykładów. Wierzchołkami grafu są w tym przypadku poszczególne wykłady.
+		Krawędziami łączymy te wykłady, które nie mogą odbyć się w tym samym czasie. Kolorowanie wierzchołków jest więc równoznaczne z przypisaniem godziny do wykładu.
+
+		<h4> Program do rozwiązywania Sudoku</h4>
+
+		<img class="sample" src="sudoku.png" alt="przykład" height="250" width="550"> <br>
+</div>
+
+	<footer>
+			<h4>Alicja Zoń, Techniki Internetowe 2017/18</h4>
+			<h5>Ostatnia modyfikacja: 31.12.2017</h5>
+		</footer>
+
+		</body>
+
+	</html>

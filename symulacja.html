@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Kolorowanie grafów</title>
+		<meta charset="utf-8"/>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="graph.js" ></script>
+	
+	</head>
+
+	<body>
+		<nav>
+			<ul class="navigation">
+				<li><a href="index.html">Teoria</a></li>
+				<li><a href="">Symulacja</a></li>
+				<li><a href="source.html">Źródła</a></li>
+			</ul>
+		</nav>
+		<br>
+		<div id="grafy">
+			<p>Poniżej można sprawdzić, jak dany algorytm kolorowania radzi sobie z kolorowaniem różnych typów grafów. <br>
+			Wybierz graf do pokolorowania oraz algorytm:<br> </p>
+			<input type="image" src="graf1.png" class="jeden" alt="jeden" onclick="draw1();return true;"> 		
+			<input type="image" src="graf2.png" class="jeden" alt="dwa" onclick="draw2();return true;">  
+			<input type="image" src="graf3.png" class="dwa" alt="trzy" onclick="draw3();return true;"> 
+			<input type="image" src="graf4.png" class="dwa" alt="cztery" onclick="draw4();return true;"> <br>
+			<button class="start" onclick="preview1(); return true;"> Informacje </button> 
+			<button class="start" onclick="preview2(); return true;"> Informacje </button> 
+			<button class="start" onclick="preview3(); return true;"> Informacje </button> 
+			<button class="start" onclick="preview4(); return true;"> Informacje </button> <br>
+			
+			
+		</div>
+		<canvas id="canvas" width="800" height="400" style="border: solid black">Błąd</canvas>
+		
+		<button class="alg" onclick="greedy_algorithm(); return true;"> Algorytm zachłanny</button> 
+		<button class="alg" onclick="lf_algorithm(); return true;"> Algorytm LF </button> 
+
+	<footer>
+			<h4>Alicja Zoń, Techniki Internetowe 2017/18</h4>
+			<h5>Ostatnia modyfikacja: 31.12.2017</h5>
+		</footer>
+</body>
+	</html>
